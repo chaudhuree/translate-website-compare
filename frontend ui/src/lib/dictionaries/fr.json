@@ -1,0 +1,41 @@
+{
+  "common": {
+    "language": "Français",
+    "selectLanguage": "Choisir la langue"
+  },
+  "nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "contact": "Contact",
+    "products": "Produits",
+    "blog": "Blog",
+    "compare": "Comparer",
+    "privacy": "Politique de confidentialité"
+  },
+  "home": {
+    "banner": {
+      "title": "Bienvenue dans notre magasin",
+      "subtitle": "Découvrez des produits incroyables"
+    },
+    "categories": {
+      "title": "Catégories de produits",
+      "subtitle": "Parcourez nos collections"
+    },
+    "performance": {
+      "title": "Performance",
+      "subtitle": "Voyez comment nous nous comparons"
+    }
+  },
+  "about": {
+    "title": "À propos de nous",
+    "description": "En savoir plus sur notre entreprise"
+  },
+  "contact": {
+    "title": "Contactez-nous",
+    "description": "Prenez contact avec nous"
+  },
+  "products": {
+    "title": "Nos produits",
+    "description": "Parcourez notre collection"
+  }
+}

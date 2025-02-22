@@ -1,0 +1,11 @@
+{
+  "common": {
+    "language": "Français",
+    "selectLanguage": "Choisir la langue"
+  },
+  "nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "contact": "Contact"
+  }
+}
