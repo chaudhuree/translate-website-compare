@@ -3,6 +3,8 @@
 import logoBlack from "@/assets/icons/Logo (1).png";
 import logo from "@/assets/icons/Logo (2) (1).png";
 import usa from "@/assets/usa.png";
+import france from "@/assets/france.png";
+import spain from "@/assets/spain.png";
 import ThemeToggle from "@/components/ThemeToggle";
 import { ChevronDown, Menu, X } from "lucide-react";
 import Image from "next/image";
@@ -41,8 +43,8 @@ export default function Navbar() {
 
   const languages = [
     { code: "en", name: "English", flag: usa },
-    { code: "fr", name: "French", flag: usa },
-    { code: "es", name: "Spanish", flag: usa },
+    { code: "fr", name: "French", flag: france },
+    { code: "es", name: "Spanish", flag: spain },
   ];
 
   const currentLangDetails = languages.find((l) => l.code === lang) || languages[0];
