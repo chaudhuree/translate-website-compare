@@ -2,6 +2,7 @@ import { useCategoriesQuery } from "@/redux/Api/category/categoryApi";
 import { Category } from "@/types/Article";
 import { Cpu, HardDrive, Zap, CircuitBoard } from "lucide-react";
 import Link from "next/link";
+import { useTranslations } from "@/components/ClientLayout";
 
 export const categoriesIcon = [
   { icon: <Cpu className="w-8 h-8" /> },
@@ -19,6 +20,7 @@ const getRandomIcon = () => {
 
 export default function ProductCategories() {
   const { data } = useCategoriesQuery({});
+  const { dict } = useTranslations();
 
   return (
     <div className="min-h-screen lg:py-20 py-10 px-4">
@@ -26,12 +28,10 @@ export default function ProductCategories() {
         {/* Header Section */}
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-black dark:text-white mb-4">
-            Explore Our Categories
+            {dict.home.exploreCategories.title}
           </h2>
           <p className="dark:text-grey text-gray max-w-2xl mx-auto">
-            Discover a wide range of products tailored to meet your needs. From
-            the latest innovations to timeless essentials, find what you&apos;re
-            looking for in one place.
+            {dict.home.exploreCategories.description}
           </p>
         </div>
 

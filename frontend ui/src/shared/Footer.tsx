@@ -6,6 +6,7 @@ import logo from "@/assets/icons/Logo (2) (1).png";
 import logoBlack from "@/assets/icons/Logo (1).png";
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslations } from "@/components/ClientLayout";
 
 export default function Footer() {
   const { theme } = useTheme();
@@ -14,6 +15,7 @@ export default function Footer() {
 
   // Determine which logo to show based on theme
   const currentLogo = theme === "dark" ? logo : logoBlack;
+  const { dict } = useTranslations();
   return (
     <footer className="dark:bg-primary bg-white  dark:text-white text-black py-8">
       <div className="container mx-auto px-4">
@@ -29,8 +31,7 @@ export default function Footer() {
             </Link>
 
             <p className="text-sm pt-[20px]">
-              Become your own boss, choose your own schedule, and work in your
-              preferred areas.
+              {dict.footer.description}
             </p>
           </div>
 
@@ -38,19 +39,19 @@ export default function Footer() {
           <div className="grid grid-cols-2 gap-8 md:gap-16">
             <div className="space-y-2">
               <Link href="/" className="block text-sm hover:text-gray-300">
-                Home{" "}
+                {dict.footer.home}
               </Link>
               <Link href="/compare" className="block text-sm hover:text-gray-300">
-                Compare{" "}
+                {dict.footer.compare}
               </Link>
              
             </div>
             <div className="space-y-2">
               <Link href="/allblogs" className="block text-sm hover:text-gray-300">
-                Blog
+                {dict.footer.blog}
               </Link>
               <a href="/contact" className="block text-sm hover:text-gray-300">
-                Contact
+                {dict.footer.contact}
               </a>
             </div>
           </div>
@@ -87,10 +88,10 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-gray-800">
           <p className="text-sm text-gray-400 mb-4 md:mb-0">
-            ©2025 XYZ, all rights reserved.
+            ©2025 XYZ, {dict.footer.copyright}
           </p>
           <Link href="/privacy" className="text-sm text-gray-400 hover:text-gray-300">
-            Privacy and policy
+            {dict.footer.privacy}
           </Link>
         </div>
       </div>

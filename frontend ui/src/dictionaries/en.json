@@ -5,25 +5,54 @@
   },
   "nav": {
     "home": "Home",
-    "about": "About",
-    "contact": "Contact",
-    "products": "Products",
-    "blog": "Blog",
     "compare": "Compare",
-    "privacy": "Privacy Policy"
+    "blog": "Blog",
+    "contact": "Contact"
   },
   "home": {
     "banner": {
-      "title": "Welcome to Our Store",
-      "subtitle": "Discover Amazing Products"
+      "title": "Find the Perfect GPU for Your Needs.",
+      "description": "Unlock the ultimate resource for GPU enthusiasts and professionals alike. Dive into a comprehensive platform that empowers you to compare, benchmark, and explore graphics cards with unparalleled precision.",
+      "button": "Compare Cpus"
     },
-    "categories": {
-      "title": "Product Categories",
-      "subtitle": "Browse our collections"
+    "homeCompare": {
+      "title": "Compare and Choose the Best Hardware",
+      "description": "Easily compare the specifications and performance metrics of your favorite GPUs. Make informed decisions for your gaming, creative, or professional needs with detailed side-by-side comparisons.",
+      "features": [
+        "Comprehensive Specs",
+        "Performance Metrics",
+        "Custom Filters",
+        "Multi-GPU Comparison",
+        "User-Friendly Interface"
+      ],
+      "button": "View Products"
     },
-    "performance": {
-      "title": "Performance",
-      "subtitle": "See how we compare"
+    "exploreCategories": {
+      "title": "Explore Our Categories",
+      "description": "Discover a wide range of products tailored to meet your needs. From the latest innovations to timeless essentials, find what you're looking for in one place."
+    },
+    "compare": {
+      "title": "Compare and Choose",
+      "subtitle": "Find the perfect match"
+    },
+    "performanceSection": {
+      "title": "Performance You Can Trust",
+      "description": "Explore comprehensive benchmark results for a wide range of GPUs. This section provides detailed performance metrics from both synthetic benchmarks and real-world gaming tests.",
+      "features": [
+        "Synthetic Benchmark Results",
+        "Real-World Gaming Performance",
+        "Resolution-Based Analysis",
+        "Overclocking Results",
+        "Efficiency Metrics"
+      ],
+      "button": "View Products"
+    },
+    "exploreOurProducts": {
+      "title": "Explore Our Blogs",
+      "description": "Discover a wide range of products tailored to meet your needs. From the latest innovations to timeless essentials, find what you're looking for in one place."
+    },
+    "brands": {
+      "title": "Brands"
     }
   },
   "about": {
@@ -37,5 +66,14 @@
   "products": {
     "title": "Our Products",
     "description": "Browse our collection"
+  },
+  "footer": {
+    "description": "Become your own boss, choose your own schedule, and work in your preferred areas.",
+    "home": "Home",
+    "compare": "Compare",
+    "blog": "Blog",
+    "contact": "Contact",
+    "copyright": "all rights reserved.",
+    "privacy": "Privacy and policy"
   }
 }

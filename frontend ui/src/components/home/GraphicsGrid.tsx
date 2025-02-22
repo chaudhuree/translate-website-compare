@@ -2,16 +2,18 @@ import { useBrandQuery } from "@/redux/Api/category/categoryApi";
 import { Category } from "@/types/Article";
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslations } from "@/components/ClientLayout";
 
 export default function GraphicsGrid() {
   const { data } = useBrandQuery({});
+  const { dict } = useTranslations();
   console.log("graphics data", data);
 
   return (
     <div className="lg:px-5 px-3 pb-20">
       <div className="container mx-auto">
         <h2 className="text-2xl lg:text-4xl font-bold dark:text-white text-black mb-12">
-          Brands
+          {dict.home.brands.title}
         </h2>
 
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">

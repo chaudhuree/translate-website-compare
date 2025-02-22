@@ -5,7 +5,68 @@
   },
   "nav": {
     "home": "Inicio",
-    "about": "Acerca de",
+    "compare": "Comparar",
+    "blog": "Blog",
     "contact": "Contacto"
+  },
+  "home": {
+    "banner": {
+      "title": "Encuentra la GPU perfecta para tus necesidades.",
+      "description": "Desbloquea el recurso definitivo para entusiastas de GPU y profesionales. Sumérgete en una plataforma integral que te permite comparar, evaluar y explorar tarjetas gráficas con una precisión incomparable.",
+      "button": "Comparar procesadores"
+    },
+    "homeCompare": {
+      "title": "Comparar y elegir la mejor hardware",
+      "description": "Compara fácilmente las especificaciones y el rendimiento de tus GPUs favoritas. Toma decisiones informadas para tus necesidades de juego, creatividad o trabajo profesional con comparaciones detalladas lado a lado.",
+      "features": [
+        "Especificaciones completas",
+        "Métricas de rendimiento",
+        "Filtros personalizados",
+        "Comparación multi-GPU",
+        "Interfaz de usuario amigable"
+      ],
+      "button": "Ver productos"
+    },
+    "exploreCategories": {
+      "title": "Explora nuestras categorías",
+      "description": "Descubre una amplia variedad de productos diseñados para satisfacer tus necesidades. Desde las últimas innovaciones hasta los esenciales atemporales, encuentra todo lo que buscas en un solo lugar."
+    },
+    "performanceSection": {
+      "title": "Rendimiento en el que puedes confiar",
+      "description": "Explora resultados de benchmarks completos para una amplia gama de GPUs. Esta sección proporciona métricas de rendimiento detalladas de benchmarks sintéticos y pruebas en juegos reales.",
+      "features": [
+        "Resultados de benchmarks sintéticos",
+        "Pruebas de rendimiento en juegos reales",
+        "Analisis por resolución",
+        "Resultados de overclocking",
+        "Metricas de eficiencia"
+      ]
+    },
+    "exploreOurProducts": {
+      "title": "Explora nuestros blogs",
+      "description": "Descubre una amplia variedad de productos diseñados para satisfacer tus necesidades. Desde las últimas innovaciones hasta los esenciales atemporales, encuentra todo lo que buscas en un solo lugar.",
+      "button": "Explora nuestros blogs",
+      "subTitle": "Descubre una amplia variedad de productos diseñados para satisfacer tus necesidades."
+    },
+    "brands": {
+      "title": "marcas"
+    },
+    "compare": {
+      "title": "Compara y Elige",
+      "subtitle": "Encuentra la combinación perfecta"
+    }
+  },
+  "about": {
+    "title": "Sobre nosotros",
+    "description": "Aprende más sobre nuestra empresa"
+  },
+  "footer": {
+    "description": "Conviértete en tu propio jefe, elige tu propio horario y trabaja en las áreas que prefieras.",
+    "home": "Inicio",
+    "compare": "Comparar",
+    "blog": "Blog",
+    "contact": "Contacto",
+    "copyright": "Todos los derechos reservados.",
+    "privacy": "Privacidad y política"
   }
 }

@@ -5,7 +5,66 @@
   },
   "nav": {
     "home": "Accueil",
-    "about": "À propos",
+    "compare": "Comparer",
+    "blog": "Blog",
     "contact": "Contact"
+  },
+  "home": {
+    "banner": {
+      "title": "Trouvez le GPU parfait pour vos besoins.",
+      "description": "Débloquez la ressource ultime pour les passionnés de GPU et les professionnels. Plongez dans une plateforme complète qui vous permet de comparer, tester et explorer les cartes graphiques avec une précision inégalée.",
+      "button": "Comparer les processeurs"
+    },
+    "homeCompare": {
+      "title": "Comparez et choisissez le meilleur matériel",
+      "subtitle": "Comparez facilement les spécifications et les performances de vos GPU préférés. Prenez des décisions éclairées pour vos besoins en jeu, création ou travail professionnel grâce à des comparaisons détaillées côte à côte.",
+      "features": [
+        "Specifications complètes",
+        "Indicateurs de performance",
+        "Filtres personnalisés",
+        "Comparaison multi-GPU",
+        "Interface conviviale"
+      ],
+      "button": "Voir les produits"
+    },
+    "exploreCategories": {
+      "title": "Explorez nos catégories",
+      "description": "Découvrez une large gamme de produits adaptés à vos besoins. Des dernières innovations aux essentiels intemporels, trouvez tout ce que vous cherchez en un seul endroit."
+    },
+    "compare": {
+      "title": "Comparez et Choisissez",
+      "subtitle": "Trouvez la correspondance parfaite"
+    },
+    "performanceSection": {
+      "title": "Des performances en lesquelles vous pouvez avoir confiance",
+      "description": "Explorez des résultats de benchmarks complets pour une large gamme de GPU. Cette section fournit des métriques de performance détaillées issues de benchmarks synthétiques et de tests en conditions réelles.",
+      "features": [
+        "Resultats de benchmarks synthétiques",
+        "Performances en jeux réels",
+        "Analyses par résolution",
+        "Resultats d'overclocking",
+        "Metrices d'efficience"
+      ]
+    },
+    "exploreOurProducts": {
+      "title": "Découvrez nos blogs",
+      "description": "Découvrez une large gamme de produits adaptés à vos besoins. Des dernières innovations aux essentiels intemporels, trouvez tout ce que vous cherchez en un seul endroit."
+    },
+    "brands": {
+      "title": "marques"
+    }
+  },
+  "about": {
+    "title": "À propos de nous",
+    "description": "En savoir plus sur notre entreprise"
+  },
+  "footer": {
+    "description": "Devenez votre propre patron, choisissez votre propre emploi du temps et travaillez dans les zones de votre choix.",
+    "home": "Accueil",
+    "compare": "Comparer",
+    "blog": "Blog",
+    "contact": "Contact",
+    "copyright": "Tous droits réservés.",
+    "privacy": "Confidentialité et politique"
   }
 }

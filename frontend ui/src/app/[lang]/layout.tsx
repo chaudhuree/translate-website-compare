@@ -17,6 +17,7 @@ export default function Layout({ children, params }: LayoutProps) {
   const dict = use(getDictionary(lang));
 
   return (
+    
     <ClientLayout dict={dict} lang={lang}>
       {children}
     </ClientLayout>

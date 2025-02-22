@@ -11,6 +11,8 @@ import { useTheme } from "next-themes";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { useTranslations } from "@/components/ClientLayout";
+import { Locale } from "@/lib/i18n/i18n-config";
+import { setStoredLanguage, updateLanguageInPath } from "@/utils/languageUtils";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -32,8 +34,7 @@ export default function Navbar() {
   // Navigation links array
   const navLinks = [
     { name: dict.nav.home, href: `/${lang}` },
-    { name: dict.nav.about, href: `/${lang}/about` },
-    { name: dict.nav.products, href: `/${lang}/products` },
+    { name: dict.nav.compare, href: `/${lang}/compare` },
     { name: dict.nav.blog, href: `/${lang}/blog` },
     { name: dict.nav.contact, href: `/${lang}/contact` },
   ];
@@ -47,8 +48,11 @@ export default function Navbar() {
   const currentLangDetails = languages.find((l) => l.code === lang) || languages[0];
 
   const handleLanguageChange = (code: string) => {
-    const currentPath = router;
-    const newPath = currentPath.replace(`/${lang}`, `/${code}`);
+    // Save the selected language to localStorage
+    setStoredLanguage(code as Locale);
+    
+    // Update the URL
+    const newPath = updateLanguageInPath(router, code as Locale);
     window.location.href = newPath;
     setLangOpen(false);
   };
@@ -79,31 +83,47 @@ export default function Navbar() {
         </ul>
 
         {/* Right Side: Theme Toggle & Language Selector */}
-        <div className="hidden md:flex items-center gap-4 relative z-[100]">
+        <div className="hidden md:flex items-center gap-4">
           <ThemeToggle />
-          <div
-            className="relative flex items-center gap-2 cursor-pointer"
-            onClick={() => setLangOpen(!langOpen)}
-          >
-            <Image
-              src={currentLangDetails.flag}
-              alt={`${currentLangDetails.name} Flag`}
-              height={24}
-              width={24}
-              className="rounded-full"
-            />
-            <span className={`font-medium ${navbarColor}`}>{currentLangDetails.name}</span>
-            <ChevronDown size={18} className={navbarColor} />
+          <div className="relative">
+            <div
+              className="flex items-center gap-2 cursor-pointer p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+              onClick={() => setLangOpen(!langOpen)}
+            >
+              <Image
+                src={currentLangDetails.flag}
+                alt={`${currentLangDetails.name} Flag`}
+                height={24}
+                width={24}
+                className="rounded-full"
+              />
+              <span className={`font-medium ${navbarColor}`}>{currentLangDetails.name}</span>
+              <ChevronDown 
+                size={18} 
+                className={`${navbarColor} transform transition-transform duration-200 ${langOpen ? 'rotate-180' : 'rotate-0'}`} 
+              />
+            </div>
             
             {/* Language Dropdown */}
             {langOpen && (
-              <ul className="absolute top-8 right-0 w-32 bg-white dark:bg-gray-800 rounded-md shadow-lg py-2 ">
+              <ul className="absolute top-full right-0 mt-2 w-40 bg-white dark:bg-gray-900 rounded-lg shadow-lg py-2 border border-gray-200 dark:border-gray-700 z-50 text-black">
                 {languages.map((language) => (
                   <li
                     key={language.code}
-                    className="px-4 py-2 cursor-pointer text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+                    className={`px-4 py-2 cursor-pointer flex items-center gap-2 ${
+                      language.code === lang 
+                        ? 'bg-gray-100 dark:bg-gray-600 text-gray-600 bg-blue-500 dark:text-white'  
+                        : 'text-gray-700  hover:bg-gray-50 dark:hover:bg-gray-800'
+                    }`}
                     onClick={() => handleLanguageChange(language.code)}
                   >
+                    <Image
+                      src={language.flag}
+                      alt={`${language.name} Flag`}
+                      height={20}
+                      width={20}
+                      className="rounded-full"
+                    />
                     {language.name}
                   </li>
                 ))}
@@ -113,7 +133,7 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Menu Button */}
-        <div className="md:hidden block">
+        <div className="md:hidden block ">
           <div className="flex gap-2 items-center">
             <ThemeToggle />
             <button
@@ -128,12 +148,12 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden bg-white dark:bg-gray-800 shadow-lg p-4">
+        <div className="md:hidden bg-white dark:bg-gray-900 shadow-lg p-4 text-black ">
           <ul className="space-y-4">
             {navLinks.map((link, index) => (
               <li
                 key={index}
-                className="cursor-pointer z-[7777]"
+                className="cursor-pointer"
                 onClick={() => setIsOpen(false)}
               >
                 <Link
@@ -146,34 +166,50 @@ export default function Navbar() {
             ))}
             
             {/* Language Selector */}
-            <div
-              className="relative flex items-center gap-2 cursor-pointer z-[100]"
-              onClick={() => setLangOpen(!langOpen)}
-            >
-              <Image
-                src={currentLangDetails.flag}
-                alt={`${currentLangDetails.name} Flag`}
-                height={24}
-                width={24}
-                className="rounded-full w-6 h-6"
-              />
-              <span className="text-gray-800 dark:text-white">{currentLangDetails.name}</span>
-              <ChevronDown size={18} className="text-gray-800 dark:text-white" />
-            </div>
+            <div className="relative">
+              <div
+                className="flex items-center gap-2 cursor-pointer p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                onClick={() => setLangOpen(!langOpen)}
+              >
+                <Image
+                  src={currentLangDetails.flag}
+                  alt={`${currentLangDetails.name} Flag`}
+                  height={24}
+                  width={24}
+                  className="rounded-full"
+                />
+                <span className="text-gray-800 dark:text-white">{currentLangDetails.name}</span>
+                <ChevronDown 
+                  size={18} 
+                  className={`text-gray-800 dark:text-white transform transition-transform duration-200 ${langOpen ? 'rotate-180' : 'rotate-0'}`} 
+                />
+              </div>
 
-            {langOpen && (
-              <ul className="mt-2 bg-white dark:bg-gray-700 rounded-md shadow-lg py-2 z-[100] relative">
-                {languages.map((language) => (
-                  <li
-                    key={language.code}
-                    className="px-4 py-2 cursor-pointer text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors"
-                    onClick={() => handleLanguageChange(language.code)}
-                  >
-                    {language.name}
-                  </li>
-                ))}
-              </ul>
-            )}
+              {langOpen && (
+                <ul className="mt-2 bg-white dark:bg-gray-900 rounded-lg shadow-lg py-2 border border-gray-200 dark:border-gray-700">
+                  {languages.map((language) => (
+                    <li
+                      key={language.code}
+                      className={`px-4 py-2 cursor-pointer flex items-center gap-2 ${
+                        language.code === lang 
+                          ? 'bg-gray-100 dark:bg-gray-800 text-gray-900 ' 
+                          : 'text-gray-700 dark:text-gray-900 hover:bg-gray-50 dark:hover:bg-gray-800'
+                      }`}
+                      onClick={() => handleLanguageChange(language.code)}
+                    >
+                      <Image
+                        src={language.flag}
+                        alt={`${language.name} Flag`}
+                        height={20}
+                        width={20}
+                        className="rounded-full"
+                      />
+                      {language.name}
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
           </ul>
         </div>
       )}

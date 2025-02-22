@@ -1,14 +1,16 @@
 import performance from "@/assets/perfomance.png";
 import Image from "next/image";
 import { GiCheckMark } from "react-icons/gi";
+import { useTranslations } from "@/components/ClientLayout";
 
 export default function PerformanceSection() {
+  const { dict } = useTranslations();
   const features = [
-    "Synthetic Benchmark Results",
-    "Real-World Gaming Performance",
-    "Resolution-Based Analysis",
-    "Overclocking Results",
-    "Efficiency Metrics",
+    dict.home.performanceSection.features[0],
+    dict.home.performanceSection.features[1],
+    dict.home.performanceSection.features[2],
+    dict.home.performanceSection.features[3],
+    dict.home.performanceSection.features[4],
   ];
 
   return (
@@ -30,13 +32,11 @@ export default function PerformanceSection() {
           {/* Right Column - Content */}
           <div className="space-y-6">
             <h2 className="text-3xl sm:text-4xl font-bold dark:text-white">
-              Performance You Can Trust
+              {dict.home.performanceSection.title}
             </h2>
 
             <p className="text-gray-400 text-lg">
-              Explore comprehensive benchmark results for a wide range of GPUs.
-              This section provides detailed performance metrics from both
-              synthetic benchmarks and real-world gaming tests cards.
+              {dict.home.performanceSection.description}
             </p>
 
             {/* Feature List */}
