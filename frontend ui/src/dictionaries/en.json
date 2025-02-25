@@ -1,7 +1,8 @@
 {
   "common": {
     "language": "English",
-    "selectLanguage": "Select Language"
+    "selectLanguage": "Select Language",
+    "buyNow": "Buy now"
   },
   "nav": {
     "home": "Home",
@@ -69,10 +70,6 @@
     },
     "button": "Submit Now"
   },
-  "products": {
-    "title": "Our Products",
-    "description": "Browse our collection"
-  },
   "blog": {
     "title": "Explore Blog",
     "description": "Discover a wide range of products tailored to meet your needs. From the latest innovations to timeless essentials, find what you're looking for in one place."
@@ -126,5 +123,9 @@
       "createdAt": "Created At",
       "updatedAt": "Updated At",
       "onlinePurchaseLink": "Online Purchase Link"
-    }
+    },
+    "benchmarkAndSpecs": "Benchmark and Specs",
+     "benchmarkAndSpecsDetails":"All technical data and various benchmarks are listed on this page.",
+     "benchmarkResults":"Benchmark Results",
+     "descriptionNotAvailble": "Description not available"
 }

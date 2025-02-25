@@ -1,7 +1,8 @@
 {
   "common": {
     "language": "Français",
-    "selectLanguage": "Choisir la langue"
+    "selectLanguage": "Sélectionner la Langue",
+    "buyNow": "Acheter maintenant"
   },
   "nav": {
     "home": "Accueil",
@@ -121,5 +122,9 @@
       "createdAt": "Créé à",
       "updatedAt": "Mis à jour à",
       "onlinePurchaseLink": "Lien d'achat en ligne"
-    }
+    },
+    "benchmarkAndSpecs": "Référence et Spécifications",
+    "benchmarkAndSpecsDetails":"Toutes les données techniques et divers benchmarks sont listés sur cette page.",
+    "benchmarkResults": "Resultats des benchmarks",
+    "descriptionNotAvailble": "Description non disponible"
 }

@@ -1,19 +1,7 @@
 "use client";
 import ProductCard from "./ProductCard";
-
-
-// Define types for product features
-interface ProductFeatures {
-  [key: string]: {
-    Description?: string;
-    [key: string]: string | number | undefined;
-  };
-}
-
-// Define the main Product interface
-interface Product {
-  features?: ProductFeatures;
-}
+import { Product } from "@/app/[lang]/products/[id]/page";
+import { useTranslations } from "@/components/ClientLayout";
 
 // Define props for the component
 interface ProductDetailsCardProps {
@@ -21,6 +9,7 @@ interface ProductDetailsCardProps {
 }
 
 const ProductDetailsCard: React.FC<ProductDetailsCardProps> = ({ singeProduct }) => {
+  const { dict } = useTranslations() ;
   if (!singeProduct?.features) {
     return <p className="text-center text-red-500">No product details available.</p>;
   }
@@ -33,7 +22,7 @@ const ProductDetailsCard: React.FC<ProductDetailsCardProps> = ({ singeProduct })
         <ProductCard
           key={category}
           title={category.toUpperCase()}
-          description={details.Description || "Description not available!"}
+          description={details.Description || dict.descriptionNotAvailble}
           specs={Object.entries(details)
             .filter(([key]) => key.toLowerCase() !== "description") 
             .map(([key, value]) => ({

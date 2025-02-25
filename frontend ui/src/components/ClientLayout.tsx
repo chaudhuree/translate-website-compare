@@ -116,7 +116,11 @@ export interface Dictionary {
     createdAt: string;
     updatedAt: string;
     onlinePurchaseLink: string
-  }
+  },
+  benchmarkAndSpecs: string;
+  benchmarkAndSpecsDetails: string;
+  benchmarkResults: string;
+  descriptionNotAvailble: string;
 }
 
 interface TranslationContextType {
@@ -236,7 +240,11 @@ const TranslationContext = createContext<TranslationContextType>({
       createdAt: "",
       updatedAt: "",
       onlinePurchaseLink: ""
-    }
+    },
+    benchmarkAndSpecs: "",
+    benchmarkAndSpecsDetails: "",
+    benchmarkResults: "",
+    descriptionNotAvailble: ""
   },
   lang: "",
 });
