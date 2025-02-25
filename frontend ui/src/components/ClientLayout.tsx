@@ -62,7 +62,11 @@ export interface Dictionary {
       message: string;
     };
     button: string;
-  }
+  };
+  blog: {
+    title: string;
+    description: string;
+  };  
   footer: {
     description: string;
     home: string;
@@ -72,6 +76,47 @@ export interface Dictionary {
     copyright: string;
     privacy: string;
   };
+  translation: {
+    name: string;
+    description: string;
+    quantity: string;
+    features: string;
+    cpu: string;
+    memory: string;
+    baseClock: string;
+    boostClock: string;
+    cache: string;
+    cores: string;
+    threads: string;
+    TDP: string;
+    socket: string;
+    memorySupport: string;
+    maxMemory: string;
+    channels: string;
+    series: string;
+    generation: string;
+    releaseDate: string;
+    launchPrice: string;
+    chipset: string;
+    pcieVersion: string;
+    maxRamSupport: string;
+    maxResolution: string;
+    coolerType: string;
+    stockCooler: string;
+    hyperThreading: string;
+    turboBoost: string;
+    intelVt: string;
+    intelSpeedStep: string;
+    generalDetails: string;
+    connectivity: string;
+    cooler: string;
+    supportedTechnologies: string;
+    category: string;
+    brand: string;
+    createdAt: string;
+    updatedAt: string;
+    onlinePurchaseLink: string
+  }
 }
 
 interface TranslationContextType {
@@ -138,6 +183,10 @@ const TranslationContext = createContext<TranslationContextType>({
       },
       button: ""
     },
+    blog: {
+      title: "",
+      description: ""
+    },
     footer: {
       description: "",
       home: "",
@@ -146,6 +195,47 @@ const TranslationContext = createContext<TranslationContextType>({
       contact: "",
       copyright: "",
       privacy: "",
+    },
+    translation: {
+      name: "",
+      description: "",
+      quantity: "",
+      features: "",
+      cpu: "",
+      memory: "",
+      baseClock: "",
+      boostClock: "",
+      cache: "",
+      cores: "",
+      threads: "",
+      TDP: "",
+      socket: "",
+      memorySupport: "",
+      maxMemory: "",
+      channels: "",
+      series: "",
+      generation: "",
+      releaseDate: "",
+      launchPrice: "",
+      chipset: "",
+      pcieVersion: "",
+      maxRamSupport: "",
+      maxResolution: "",
+      coolerType: "",
+      stockCooler: "",
+      hyperThreading: "",
+      turboBoost: "",
+      intelVt: "",
+      intelSpeedStep: "",
+      generalDetails: "",
+      connectivity: "",
+      cooler: "",
+      supportedTechnologies: "",
+      category: "",
+      brand: "",
+      createdAt: "",
+      updatedAt: "",
+      onlinePurchaseLink: ""
     }
   },
   lang: "",

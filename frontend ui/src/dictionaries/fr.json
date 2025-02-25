@@ -68,6 +68,10 @@
     },
     "button": "Soumettre maintenant"
   },
+  "blog": {
+    "title": "Explorer le blog",
+    "description": "Découvrez une large gamme de produits adaptés à vos besoins. Des dernières innovations aux essentiels intemporels, trouvez ce que vous cherchez en un seul endroit."
+  },
   "footer": {
     "description": "Devenez votre propre patron, choisissez votre propre emploi du temps et travaillez dans les zones de votre choix.",
     "home": "Accueil",
@@ -76,5 +80,46 @@
     "contact": "Contact",
     "copyright": "Tous droits réservés.",
     "privacy": "Confidentialité et politique"
-  }
+  },
+  "translation": {
+      "name": "Nom",
+      "description": "Description",
+      "quantity": "Quantité",
+      "features": "Caractéristiques",
+      "cpu": "CPU",
+      "memory": "Mémoire",
+      "baseClock": "Fréquence de base",
+      "boostClock": "Fréquence boost",
+      "cache": "Cache",
+      "cores": "Cœurs",
+      "threads": "Threads",
+      "TDP": "TDP",
+      "socket": "Socket",
+      "memorySupport": "Support de mémoire",
+      "maxMemory": "Mémoire max",
+      "channels": "Canaux",
+      "series": "Série",
+      "generation": "Génération",
+      "releaseDate": "Date de sortie",
+      "launchPrice": "Prix de lancement",
+      "chipset": "Chipset",
+      "pcieVersion": "Version PCIe",
+      "maxRamSupport": "Support RAM max",
+      "maxResolution": "Résolution max",
+      "coolerType": "Type de refroidisseur",
+      "stockCooler": "Refroidisseur d'origine",
+      "hyperThreading": "Hyper-Threading",
+      "turboBoost": "Turbo Boost",
+      "intelVt": "Intel VT",
+      "intelSpeedStep": "Intel Speed Step",
+      "generalDetails": "Détails généraux",
+      "connectivity": "Connectivité",
+      "cooler": "Refroidisseur",
+      "supportedTechnologies": "Technologies prises en charge",
+      "category": "Catégorie",
+      "brand": "Marque",
+      "createdAt": "Créé à",
+      "updatedAt": "Mis à jour à",
+      "onlinePurchaseLink": "Lien d'achat en ligne"
+    }
 }

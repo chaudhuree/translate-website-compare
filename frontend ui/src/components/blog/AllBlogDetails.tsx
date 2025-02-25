@@ -3,20 +3,20 @@
 import { useGetBlogPostsQuery } from "@/redux/Api/blog/blogApi";
 import Article from "../Article/Article";
 import ArticleSkeleton from "../Article/ArticleSkeleton";
+import { useTranslations } from "@/components/ClientLayout";
 
 export default function Blog() {
   const { data: posts, isLoading: isLoadingPosts } = useGetBlogPostsQuery({});
-
+const {dict} = useTranslations();
   return (
     <div>
       <div className="py-5 px-5 lg;pt-[64px] pt-5">
         <div className="container mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold dark:text-white text-black mb-4">Explore Blog</h2>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold dark:text-white text-black mb-4">{dict.blog.title}</h2>
             <p className="text-gray max-w-2xl mx-auto">
-              Discover a wide range of products tailored to meet your needs.
-              From the latest innovations to timeless essentials, find what
-              you&apos;re looking for in one place.
+              {dict.blog.description}
             </p>
           </div>
 
@@ -36,5 +36,6 @@ export default function Blog() {
         </div>
       </div>
     </div>
+  </div>
   );
 }

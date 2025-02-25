@@ -1,11 +1,10 @@
-import Privacy from '@/components/Privacy'
+import AllBlogDetails from '@/components/blog/AllBlogDetails'
 import React from 'react'
 
 export default function page() {
   return (
     <div>
-        <Privacy/>
+        <AllBlogDetails/>
     </div>
   )
 }
-   
