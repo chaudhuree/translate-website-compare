@@ -60,12 +60,22 @@
     "description": "Learn more about our company"
   },
   "contact": {
-    "title": "Contact Us",
-    "description": "Get in touch with us"
+    "title": "Get in Touch",
+    "fields": {
+      "name": "Enter Name",
+      "email": "Email",
+      "subject": "Subject",
+      "message": "Message"
+    },
+    "button": "Submit Now"
   },
   "products": {
     "title": "Our Products",
     "description": "Browse our collection"
+  },
+  "blog": {
+    "title": "Explore Blog",
+    "description": "Discover a wide range of products tailored to meet your needs. From the latest innovations to timeless essentials, find what you're looking for in one place."
   },
   "footer": {
     "description": "Become your own boss, choose your own schedule, and work in your preferred areas.",

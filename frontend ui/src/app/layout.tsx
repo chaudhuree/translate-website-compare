@@ -6,6 +6,7 @@ import { Toaster } from "sonner";
 import "./globals.css";
 import Favicon from "@/assets/icons/Favicon (2).png";
 import { i18n } from '@/lib/i18n/i18n-config';
+import { ReactNode } from "react";
 
 const openSans = Open_Sans({
   subsets: ["latin"],
@@ -26,15 +27,17 @@ export async function generateStaticParams() {
   return i18n.locales.map((locale) => ({ lang: locale }));
 }
 
-export default function RootLayout({
-  children,
-  params,
-}: {
-  children: React.ReactNode;
-  params?: { lang?: string };
-}) {
+
+export interface LayoutProps {
+  children: ReactNode;
+  params?: Promise<{ lang?: string }>;
+}
+
+export default async function RootLayout({ children, params }: LayoutProps) {
+  const resolvedParams = await params;
+  const lang = resolvedParams?.lang || "en";
   return (
-    <html lang={params?.lang || "en"}>
+    <html lang={lang}>
       <body className={openSans.className}>
         <ReduxProvider>
           <ThemeProvider

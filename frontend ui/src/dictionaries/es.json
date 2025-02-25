@@ -60,6 +60,16 @@
     "title": "Sobre nosotros",
     "description": "Aprende más sobre nuestra empresa"
   },
+  "contact": {
+    "title": "Ponte en contacto",
+    "fields": {
+      "name": "Ingrese su nombre",
+      "email": "Correo electrónico",
+      "subject": "Asunto",
+      "message": "Mensaje"
+    },
+    "button": "Enviar ahora"
+  },
   "footer": {
     "description": "Conviértete en tu propio jefe, elige tu propio horario y trabaja en las áreas que prefieras.",
     "home": "Inicio",

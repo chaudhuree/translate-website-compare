@@ -3,8 +3,9 @@ import type { NextRequest } from "next/server";
 import { match } from "@formatjs/intl-localematcher";
 import Negotiator from "negotiator";
 import { i18n } from '@/lib/i18n/i18n-config';
-
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const locales = ["en", "fr", "es"];
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const defaultLocale = "en";
 
 function getLocale(request: NextRequest): string {

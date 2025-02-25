@@ -2,7 +2,7 @@
 import { clearCompare, setCompare } from "@/redux/allSlice/compareSlice";
 import { useGetCompareMutation } from "@/redux/Api/compare/compareApi";
 import { useGetProductsQuery } from "@/redux/Api/product/productApi";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "sonner";
 import GraphicsGrid from "../home/GraphicsGrid";
@@ -51,13 +51,47 @@ export default function CompareSection() {
   const [filteredProducts1, setFilteredProducts1] = useState<Product[]>([]);
   const [filteredProducts2, setFilteredProducts2] = useState<Product[]>([]);
 
+  const handleCompare = useCallback(
+    async (productOne: string, productTwo: string) => {
+      if (!productOne || !productTwo) {
+        toast.error("Please select both products before comparing.");
+        return;
+      }
+
+      if (productOne === productTwo) {
+        toast.error("Please select different products to compare.");
+        return;
+      }
+
+      dispatch(clearCompare());
+
+      try {
+        const response = await compare({ productOne, productTwo }).unwrap();
+
+        if (response?.data) {
+          dispatch(setCompare(response.data));
+          // toast.success("Comparison data fetched successfully!");
+          setShowComparison(true);
+        } else {
+          toast.error("No data found for comparison.");
+        }
+      } catch (error: CompareError | unknown) {
+        const errorMessage =
+          (error as CompareError).data?.message ||
+          "Error fetching comparison data. Please try again later.";
+        toast.error(errorMessage);
+      }
+    },
+    [compare, dispatch]
+  );
+
   useEffect(() => {
     if (products?.data?.length >= 2) {
       setSelectedProduct1(products.data[0]);
       setSelectedProduct2(products.data[1]);
       handleCompare(products.data[0].id, products.data[1].id);
     }
-  }, [products]);
+  }, [products,handleCompare]);
 
   useEffect(() => {
     if (searchTerm1) {
@@ -89,36 +123,6 @@ export default function CompareSection() {
     }
   }, [searchTerm2, selectedProduct1, products]);
 
-  const handleCompare = async (productOne: string, productTwo: string) => {
-    if (!productOne || !productTwo) {
-      toast.error("Please select both products before comparing.");
-      return;
-    }
-
-    if (productOne === productTwo) {
-      toast.error("Please select different products to compare.");
-      return;
-    }
-
-    dispatch(clearCompare());
-
-    try {
-      const response = await compare({ productOne, productTwo }).unwrap();
-
-      if (response?.data) {
-        dispatch(setCompare(response.data));
-        // toast.success("Comparison data fetched successfully!");
-        setShowComparison(true);
-      } else {
-        toast.error("No data found for comparison.");
-      }
-    } catch (error: CompareError | unknown) {
-      const errorMessage =
-        (error as CompareError).data?.message ||
-        "Error fetching comparison data. Please try again later.";
-      toast.error(errorMessage);
-    }
-  };
 
   const comparisonData = useSelector(
     (state: { compare: ComparisonState }) => state.compare

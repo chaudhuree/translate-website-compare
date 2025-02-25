@@ -53,6 +53,16 @@ export interface Dictionary {
     title: string;
     description: string;
   };
+  contact: {
+    title: string;
+    fields: {
+      name: string;
+      email: string;
+      subject: string;
+      message: string;
+    };
+    button: string;
+  }
   footer: {
     description: string;
     home: string;
@@ -117,6 +127,16 @@ const TranslationContext = createContext<TranslationContextType>({
     about: {
       title: "",
       description: ""
+    },
+    contact: {
+      title: "",
+      fields: {
+        name: "",
+        email: "",
+        subject: "",
+        message: ""
+      },
+      button: ""
     },
     footer: {
       description: "",

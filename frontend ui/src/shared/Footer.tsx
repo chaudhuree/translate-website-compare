@@ -50,9 +50,9 @@ export default function Footer() {
               <Link href="/allblogs" className="block text-sm hover:text-gray-300">
                 {dict.footer.blog}
               </Link>
-              <a href="/contact" className="block text-sm hover:text-gray-300">
+              <Link href="/contact" className="block text-sm hover:text-gray-300">
                 {dict.footer.contact}
-              </a>
+              </Link>
             </div>
           </div>
 

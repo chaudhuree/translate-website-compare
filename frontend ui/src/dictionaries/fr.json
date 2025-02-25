@@ -58,6 +58,16 @@
     "title": "À propos de nous",
     "description": "En savoir plus sur notre entreprise"
   },
+  "contact": {
+    "title": "Contactez-nous",
+    "fields": {
+      "name": "Entrez votre nom",
+      "email": "E-mail",
+      "subject": "Sujet",
+      "message": "Message"
+    },
+    "button": "Soumettre maintenant"
+  },
   "footer": {
     "description": "Devenez votre propre patron, choisissez votre propre emploi du temps et travaillez dans les zones de votre choix.",
     "home": "Accueil",
