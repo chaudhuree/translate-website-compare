@@ -14,6 +14,7 @@ export interface Dictionary {
     home: string;
     compare: string;
     blog: string;
+    about: string;
     contact: string;
   };
   home: {
@@ -121,6 +122,38 @@ export interface Dictionary {
   benchmarkAndSpecsDetails: string;
   benchmarkResults: string;
   descriptionNotAvailble: string;
+  seeAll: string;
+  products: string;
+  featuresProducts: string;
+  moreDetails: string;
+  buyNow: string;
+  aboutPage:{
+    aboutUs: string;
+    WhoWeAre: string;
+    aboutp1: string;
+    aboutp2: string;
+    missionStatement: string;
+    aboutp3: string;
+    aboutp4: string;
+    whyChooseUs: string;
+    whyChooseUsDescription: string;
+    cards: {
+      title: string;
+      description: string;
+    }[];
+  };
+  privacyPage: {
+    PrivacyPolicy: string;
+    UpdatedDate: string;
+    privacyPera1: string;
+    privacyPera2: string;
+    heading1: string;
+    heading1Description: string;
+    heading2: string;
+    heading2Description: string;
+    heading3: string;
+    heading3Description: string;
+  };
 }
 
 interface TranslationContextType {
@@ -138,6 +171,7 @@ const TranslationContext = createContext<TranslationContextType>({
       home: "",
       compare: "",
       blog: "",
+      about: "",
       contact: "",
     },
     home: {
@@ -244,7 +278,41 @@ const TranslationContext = createContext<TranslationContextType>({
     benchmarkAndSpecs: "",
     benchmarkAndSpecsDetails: "",
     benchmarkResults: "",
-    descriptionNotAvailble: ""
+    descriptionNotAvailble: "",
+    seeAll: "",
+    products: "",
+    featuresProducts: "",
+    moreDetails: "",
+    buyNow: "",
+    aboutPage:{
+      aboutUs: "",
+      WhoWeAre: "",
+      aboutp1: "",
+      aboutp2: "",
+      missionStatement: "",
+      aboutp3: "",
+      aboutp4: "",
+      whyChooseUs: "",
+      whyChooseUsDescription: "",
+      cards: [
+        {
+          title: "",
+          description: ""
+         }
+      ]
+    },
+    privacyPage: {
+      PrivacyPolicy: "",
+      UpdatedDate: "",
+      privacyPera1: "",
+      privacyPera2: "",
+      heading1: "",
+      heading1Description: "",
+      heading2: "",
+      heading2Description: "",
+      heading3: "",
+      heading3Description: ""
+    }
   },
   lang: "",
 });

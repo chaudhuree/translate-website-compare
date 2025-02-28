@@ -38,6 +38,7 @@ export default function Navbar() {
     { name: dict.nav.home, href: `/${lang}` },
     { name: dict.nav.compare, href: `/${lang}/compare` },
     { name: dict.nav.blog, href: `/${lang}/blog` },
+    { name: dict.nav.about, href: `/${lang}/about` },
     { name: dict.nav.contact, href: `/${lang}/contact` },
   ];
 

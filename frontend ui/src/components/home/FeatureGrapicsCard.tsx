@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { forwardRef } from "react";
+import { useTranslations } from "@/components/ClientLayout";
 
 // Define the ProductCard type
 interface ProductCard {
@@ -22,7 +23,7 @@ interface ProductCard {
 // ForwardRef type annotation for ref
 const FeatureGraphicsCard = forwardRef<HTMLDivElement>((props, ref) => {
   const { data} = useGetProductsQuery({});
-
+ const {dict} = useTranslations();
   const pathname = usePathname();
   const cardsData =
     pathname === "/products" ? data?.data : data?.data.slice(0, 3);
@@ -34,20 +35,20 @@ const FeatureGraphicsCard = forwardRef<HTMLDivElement>((props, ref) => {
         {pathname === "/products" && (
           <div className="pt-28">
             <h1 className="text-[36px] font-semibold dark:text-white text-black">
-              Features Products
+              {dict.featuresProducts}
             </h1>
           </div>
         )}
         <div className="flex justify-between items-center">
           <h2 className="text-xl font-semibold dark:text-white text-black">
-            Products
+            {dict.products}
           </h2>
           {pathname !== "/products" && (
             <Link
               href="/products"
               className="text-blue-500 hover:text-blue-400"
             >
-              See All
+              {dict.seeAll}
             </Link>
           )}
         </div>
@@ -94,13 +95,13 @@ const FeatureGraphicsCard = forwardRef<HTMLDivElement>((props, ref) => {
                     src={amazon}
                     alt="amazon icon"
                   />{" "}
-                  Buy now
+                  {dict.buyNow}
                 </a>
                 <Link
                   href={`products/${card.id}`}
                   className="dark:text-white dark:hover:bg-secondary hover:bg-gray hover:text-white hover:rounded-[8px] px-6 py-3"
                 >
-                  More details
+                  {dict.moreDetails}
                 </Link>
               </div>
             </div>
